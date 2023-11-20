@@ -22,7 +22,11 @@ namespace Karate.mywork
 
             if (userName == "cat" && pass == "cat")
             {
-                FormsAuthentication.RedirectFromLoginPage(userName, true);
+                Response.Redirect("admin.aspx", true);
+            }
+            else if (userName == "dog" && pass == "dog")
+            {
+                Response.Redirect("instructor.aspx", true);
             }
             else
                 Response.Redirect("loginPage.aspx", true);
