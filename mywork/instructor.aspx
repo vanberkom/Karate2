@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="instructor.aspx.cs" Inherits="Karate.mywork.instructor" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <p>
-        <asp:GridView ID="GridView1" runat="server" Height="205px" Width="455px">
+        <asp:GridView ID="instructorGridView" runat="server">
         </asp:GridView>
         <br />
     </p>
