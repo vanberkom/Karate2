@@ -11,7 +11,7 @@ namespace Karate.mywork
     {
         string conn = "";
         KarateDBDataContext dbcon;
-
+        
         // Fills both the gridviews with the members and instructors
         protected void Page_Load(object sender, EventArgs e)
         {
