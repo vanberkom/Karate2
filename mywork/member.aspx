@@ -13,10 +13,16 @@
     </p>
     <p>
         &nbsp;</p>
-    <asp:GridView ID="GridView1" runat="server" Height="175px" Width="532px">
+    <asp:GridView ID="GridView1" runat="server" Height="175px" Width="532px" DataSourceID="SqlDataSource1">
     </asp:GridView>
     <p>
-        &nbsp;</p>
+    </p>
+    <p>
+    </p>
+    <p>
+    </p>
+    <p>
+    </p>
     <p>
     </p>
 </asp:Content>
