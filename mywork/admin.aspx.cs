@@ -17,7 +17,7 @@ namespace Karate.mywork
         {
             conn = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\luke.vanberkom\\Source\\Repos\\vanberkom\\Karate2\\App_Data\\KarateSchool(1).mdf;Integrated Security=True;Connect Timeout=30";
             dbcon = new KarateDBDataContext(conn);
-            fff
+            
             // Fills the member gridview
             var members = from x in dbcon.NetUsers
                           join y in dbcon.Members on x.UserID equals y.Member_UserID
@@ -38,7 +38,12 @@ namespace Karate.mywork
         // Adding a member to the table
         protected void Button1_Click(object sender, EventArgs e)
         {
+            try
+            {
+                NetUser user = new NetUser();
+                user.UserID = 
 
+            }
         }
 
         // Adding a instructor to the table

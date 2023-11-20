@@ -103,9 +103,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\KarateSchool%281%29.mdf" />
-    <Content Include="App_Data\KarateSchool%281%29_log.ldf">
-      <DependentUpon>KarateSchool%281%29.mdf</DependentUpon>
+    <Content Include="App_Data\KarateSchool%281%29 %281%29.mdf" />
+    <Content Include="App_Data\KarateSchool%281%29 %281%29_log.ldf">
+      <DependentUpon>KarateSchool%281%29 %281%29.mdf</DependentUpon>
     </Content>
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />

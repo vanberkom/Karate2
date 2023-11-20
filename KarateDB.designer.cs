@@ -22,7 +22,7 @@ namespace Karate
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="KarateSchool(1)")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="KarateSchool(1) (1)")]
 	public partial class KarateDBDataContext : System.Data.Linq.DataContext
 	{
 		
