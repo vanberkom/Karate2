@@ -14,7 +14,7 @@ namespace Karate.mywork
         string lastname;
         
         string conn;
-        
+        string dbcon;
        
 
 
