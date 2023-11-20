@@ -15,7 +15,7 @@ namespace Karate.mywork
         // Fills both the gridviews with the members and instructors
         protected void Page_Load(object sender, EventArgs e)
         {
-            conn = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\lvan5\\Desktop\\VS Projects\\Karate\\App_Data\\KarateSchool(1)(1).mdf\";Integrated Security=True;Connect Timeout=30";
+            conn = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\luke.vanberkom\\Source\\Repos\\vanberkom\\Karate2\\App_Data\\KarateSchool(1).mdf;Integrated Security=True;Connect Timeout=30";
             dbcon = new KarateDBDataContext(conn);
 
             // Fills the member gridview
