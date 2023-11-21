@@ -10,27 +10,38 @@ namespace Karate.mywork
 {
     public partial class member : System.Web.UI.Page
     {
-        string firstname = ;
+        string firstname;
         string lastname;
 
         string conn;
         KarateDBDataContext dbcon;
+        int id;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            conn = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\austi\\Source\\Repos\\vanberkom\\Karate2\\App_Data\\KarateSchool(1) (1).mdf\";Integrated Security=True;Connect Timeout=30";
+            id= Convert.ToInt32((string)Session["user"]);
+            conn = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\luke.vanberkom\\Source\\Repos\\vanberkom\\Karate2\\App_Data\\KarateSchool(1) (1).mdf\";Integrated Security=True;Connect Timeout=30";
             dbcon = new KarateDBDataContext(conn);
 
-            var members = from x in dbcon.NetUsers
-                          join y in dbcon.Members on x.UserID equals y.Member_UserID
-                          select new { y.MemberFirstName, y.MemberLastName, y.MemberPhoneNumber, y.MemberDateJoined };
+            var grid = from x in dbcon.Members
+                       where x.Member_UserID == id
+                       join y in dbcon.Sections on x.Member_UserID equals y.Member_ID
+                       join ins in dbcon.Instructors on y.Instructor_ID equals ins.InstructorID
+                       select new { y.SectionName, ins.InstructorFirstName, ins.InstructorLastName, y.SectionFee }; 
 
-            memberGridView.DataSource = members;
-            memberGridView.DataBind();
+            GridView1.DataSource = grid;
+            GridView1.DataBind();
 
-            Label2.Text = firstname;
-            Label4.Text = lastname;
+            var find = from x in dbcon.Members
+                       where x.Member_UserID == id
+                       select x;
+            foreach (var ran in find)
+            {
+                firstLabel.Text = ran.MemberFirstName;
+                lastLabel.Text = ran.MemberLastName;
+            }
+
+
         }
     }
 }

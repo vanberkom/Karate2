@@ -19,6 +19,7 @@
             <TextBoxStyle Font-Size="0.8em" />
             <TitleTextStyle BackColor="#5D7B9D" Font-Bold="True" Font-Size="0.9em" ForeColor="White" />
         </asp:Login>
+        <asp:TextBox ID="idText" runat="server" Visible="False"></asp:TextBox>
     </form>
 </body>
 </html>

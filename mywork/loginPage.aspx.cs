@@ -10,7 +10,7 @@ namespace Karate.mywork
 {
     public partial class loginPage : System.Web.UI.Page
     {
-        public int overallID;
+        string overallID = "";
 
        
         string conn;
@@ -18,7 +18,7 @@ namespace Karate.mywork
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            conn = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\austi\\Source\\Repos\\vanberkom\\Karate2\\App_Data\\KarateSchool(1) (1).mdf\";Integrated Security=True;Connect Timeout=30";
+            conn = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\luke.vanberkom\\Source\\Repos\\vanberkom\\Karate2\\App_Data\\KarateSchool(1) (1).mdf\";Integrated Security=True;Connect Timeout=30";
             dbcon = new KarateDBDataContext(conn);
         }
 
@@ -34,13 +34,16 @@ namespace Karate.mywork
                 var selectID = from x in dbcon.NetUsers
                                where x.UserName == userName && x.UserPassword == pass
                                select x;
+                
                 // Sets the id
                 foreach (var x in selectID)
                 {
-                    overallID = x.UserID;
+                    overallID = x.UserID.ToString();
                     type = x.UserType;
                 }
 
+                Session["user"] = overallID;
+                
                 if (type == "Member")
                 {
                     Response.Redirect("member.aspx", true);
